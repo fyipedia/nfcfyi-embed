@@ -1,0 +1,45 @@
+{
+  "name": "nfcfyi-embed",
+  "version": "1.0.0",
+  "description": "Embed NFCFYI NFC tag widgets — chip specs, NDEF inspector, frequency, contactless protocols. Zero dependencies, Shadow DOM, 3 themes.",
+  "main": "dist/embed.min.js",
+  "module": "dist/embed.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "NFC",
+    "NDEF",
+    "contactless",
+    "ISO14443",
+    "MIFARE",
+    "payments",
+    "tags",
+    "embed",
+    "widget",
+    "specification",
+    "inspector",
+    "nfcfyi",
+    "nfcfyi.com",
+    "shadow-dom",
+    "zero-dependencies",
+    "fyipedia",
+    "tagfyi"
+  ],
+  "homepage": "https://widget.nfcfyi.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fyipedia/nfcfyi-embed"
+  },
+  "bugs": {
+    "url": "https://github.com/fyipedia/nfcfyi-embed/issues"
+  },
+  "license": "MIT",
+  "author": "FYIPedia <dev@fyipedia.com>",
+  "publishConfig": {
+    "access": "public"
+  }
+}
