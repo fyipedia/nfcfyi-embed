@@ -44,7 +44,7 @@ That's it. The widget fetches data from the NFCFYI API and renders with full sty
 | `data-nfcfyi` | spec, compare, features, glossary, faq, guide, search, [tools] | required | Widget type |
 | `data-slug` | e.g. "chips" | — | Entity slug from the NFCFYI database |
 | `data-theme` | light, dark, sepia, auto | light | Visual theme (`auto` follows OS preference) |
-| `data-style` | technical, modern | technical | Widget design style |
+| `data-styleVariant` | technical, modern | technical | Widget design style |
 | `data-size` | default, compact, large | default | Widget size |
 | `data-placeholder` | any string | "Search NFC Chips…" | Search box placeholder |
 
