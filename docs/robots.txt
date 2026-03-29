@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# NFCFYI Embed Widget
+# Main site: https://nfcfyi.com
+# Widget docs: https://widget.nfcfyi.com
+# npm: https://www.npmjs.com/package/nfcfyi-embed
