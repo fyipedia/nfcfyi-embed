@@ -1,21 +1,52 @@
 # NFCFYI Embed Widget
 
-> Embeddable NFCFYI widgets for any website. Zero dependencies, Shadow DOM isolation, 4 themes (light/dark/sepia/auto).
+> NFC tags, NDEF, contactless. Embeddable widgets for any website. Zero dependencies, Shadow DOM isolation.
 
 ## Quick Start
 
-Add to any HTML page:
-- Script: <script src="https://cdn.jsdelivr.net/npm/nfcfyi-embed@1/dist/embed.min.js"></script>
+```html
+<script src="https://cdn.jsdelivr.net/npm/nfcfyi-embed@1/dist/embed.min.js"></script>
+<div data-nfcfyi="ndef-inspector" data-slug="example"></div>
+```
+
+## Available Widget Types (8)
+
+- spec: `data-nfcfyi="spec"`
+- compare: `data-nfcfyi="compare"`
+- glossary: `data-nfcfyi="glossary"`
+- faq: `data-nfcfyi="faq"`
+- guide: `data-nfcfyi="guide"`
+- search: `data-nfcfyi="search"`
+- ndef-inspector (interactive): `data-nfcfyi="ndef-inspector"`
+- frequency (interactive): `data-nfcfyi="frequency"`
+
+## Customization
+
+- **Themes**: light, dark, sepia, auto (follows system preference)
+- **Sizes**: compact (280px), default (420px), large (720px)
+- **Styles**: modern, classic
+
+```html
+<div data-nfcfyi="ndef-inspector" data-slug="example"
+     data-theme="auto" data-size="compact" data-style-variant="modern"></div>
+```
+
+## Integration Methods
+
+1. **Script tag** (recommended): `<script src="https://cdn.jsdelivr.net/npm/nfcfyi-embed@1/dist/embed.min.js"></script>`
+2. **iframe**: `https://nfcfyi.com/iframe/entity/{slug}/`
+3. **oEmbed**: `https://nfcfyi.com/oembed?url={page_url}&format=json`
+4. **Badge**: `https://nfcfyi.com/badge/site.svg`
 
 ## Links
 
 - Main site: https://nfcfyi.com
 - Widget docs: https://widget.nfcfyi.com
-- npm: https://www.npmjs.com/package/nfcfyi-embed
+- API documentation: https://nfcfyi.com/developers/
+- npm package: https://www.npmjs.com/package/nfcfyi-embed
 - GitHub: https://github.com/fyipedia/nfcfyi-embed
-- API: https://nfcfyi.com/developers/
 
-## Tag FYI Widget Family
+## Tag FYI Widget Network
 
 - [BarcodeFYI Widget](https://widget.barcodefyi.com)
 - [QRCodeFYI Widget](https://widget.qrcodefyi.com)
