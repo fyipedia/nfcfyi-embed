@@ -753,7 +753,7 @@ function renderError(container, message, config) {
   container.innerHTML = `
     <div class="tagfyi-error">
       <p>${message}</p>
-      <a href="https://${config.domain}" target="_blank" rel="noopener">
+      <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">
         Visit ${config.name}
       </a>
     </div>
@@ -761,7 +761,7 @@ function renderError(container, message, config) {
 }
 var externalLinkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
 function poweredByHTML(config) {
-  return `<span class="tagfyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="noopener">${config.name}</a></span>`;
+  return `<span class="tagfyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">${config.name}</a></span>`;
 }
 
 // src/api.ts
@@ -928,7 +928,7 @@ function renderSpec(container, data, slug, config) {
     </div>
 
     <div class="tagfyi-actions">
-      <a class="tagfyi-link" href="${entityUrl}" target="_blank" rel="noopener">
+      <a class="tagfyi-link" href="${entityUrl}" target="_blank" rel="nofollow noopener">
         Full spec on ${escapeHTML(config.name)} ${externalLinkIcon}
       </a>
     </div>
@@ -1002,7 +1002,7 @@ function initCompareWidget(el, config) {
                 ${entities.map(
       (e) => `
                   <th class="tagfyi-compare-th" style="width:${colWidth}%">
-                    <a href="https://${config.domain}/${config.entitySlug}/${escapeHTML2(e.slug)}/" target="_blank" rel="noopener" class="tagfyi-compare-entity-link">
+                    <a href="https://${config.domain}/${config.entitySlug}/${escapeHTML2(e.slug)}/" target="_blank" rel="nofollow noopener" class="tagfyi-compare-entity-link">
                       ${escapeHTML2(String(e.name))}
                       ${externalLinkIcon}
                     </a>
@@ -1103,7 +1103,7 @@ function initFeaturesWidget(el, config) {
             <p class="tagfyi-scan-strip-title">${escapeHTML3(String(entity.name))}</p>
             <p class="tagfyi-scan-strip-meta">Feature Matrix</p>
           </div>
-          <a href="${entityUrl}" target="_blank" rel="noopener" class="tagfyi-link" aria-label="View on ${config.name}">
+          <a href="${entityUrl}" target="_blank" rel="nofollow noopener" class="tagfyi-link" aria-label="View on ${config.name}">
             ${externalLinkIcon}
           </a>
         </div>
@@ -1175,7 +1175,7 @@ function initStandardWidget(el, config) {
             </p>
             <p class="tagfyi-scan-strip-meta">${fullName}</p>
           </div>
-          <a href="${standardUrl}" target="_blank" rel="noopener" class="tagfyi-link" aria-label="View standard on ${config.name}">
+          <a href="${standardUrl}" target="_blank" rel="nofollow noopener" class="tagfyi-link" aria-label="View standard on ${config.name}">
             ${externalLinkIcon}
           </a>
         </div>
@@ -1204,7 +1204,7 @@ function initStandardWidget(el, config) {
     }
     html += `
         <div class="tagfyi-actions">
-          <a href="${standardUrl}" target="_blank" rel="noopener" class="tagfyi-link">
+          <a href="${standardUrl}" target="_blank" rel="nofollow noopener" class="tagfyi-link">
             View standard ${externalLinkIcon}
           </a>
         </div>
@@ -1299,7 +1299,7 @@ function renderGlossary(container, data, config) {
   const termUrl = `https://${config.domain}/glossary/${data.slug}/`;
   const glossaryUrl = `https://${config.domain}/glossary/`;
   const relatedPills = data.related_terms && data.related_terms.length > 0 ? data.related_terms.map(
-    (rt) => `<a class="tagfyi-pill" href="https://${config.domain}/glossary/${escapeHTML5(rt.slug)}/" target="_blank" rel="noopener">${escapeHTML5(rt.name)}</a>`
+    (rt) => `<a class="tagfyi-pill" href="https://${config.domain}/glossary/${escapeHTML5(rt.slug)}/" target="_blank" rel="nofollow noopener">${escapeHTML5(rt.name)}</a>`
   ).join("") : "";
   container.innerHTML = `
     <div class="tagfyi-scan-strip">
@@ -1316,10 +1316,10 @@ function renderGlossary(container, data, config) {
     ${relatedPills ? `<div class="tagfyi-pills-row">${relatedPills}</div>` : ""}
 
     <div class="tagfyi-actions">
-      <a class="tagfyi-link" href="${glossaryUrl}" target="_blank" rel="noopener">
+      <a class="tagfyi-link" href="${glossaryUrl}" target="_blank" rel="nofollow noopener">
         See full glossary on ${escapeHTML5(config.name)} ${externalLinkIcon}
       </a>
-      <a class="tagfyi-link" href="${termUrl}" target="_blank" rel="noopener">
+      <a class="tagfyi-link" href="${termUrl}" target="_blank" rel="nofollow noopener">
         ${escapeHTML5(data.name)} ${externalLinkIcon}
       </a>
     </div>
@@ -1404,7 +1404,7 @@ function initTooltipWidget(el, config) {
             <div style="font-weight:600;margin-bottom:4px;color:#f8fafc">${escapeHTML6(data.term)}</div>
             <div style="color:#cbd5e1">${escapeHTML6(data.definition)}</div>
             <div style="margin-top:6px">
-              <a href="${termUrl}" target="_blank" rel="noopener"
+              <a href="${termUrl}" target="_blank" rel="nofollow noopener"
                  style="font-size:11px;color:${config.accent};text-decoration:none;font-weight:500">
                 View full definition \u2192
               </a>
@@ -1502,10 +1502,10 @@ function renderFaq(container, data, config) {
     </div>
 
     <div class="tagfyi-actions">
-      <a class="tagfyi-link" href="${faqsUrl}" target="_blank" rel="noopener">
+      <a class="tagfyi-link" href="${faqsUrl}" target="_blank" rel="nofollow noopener">
         More FAQs on ${escapeHTML7(config.name)} ${externalLinkIcon}
       </a>
-      <a class="tagfyi-link" href="${faqUrl}" target="_blank" rel="noopener">
+      <a class="tagfyi-link" href="${faqUrl}" target="_blank" rel="nofollow noopener">
         Full answer ${externalLinkIcon}
       </a>
     </div>
@@ -1548,7 +1548,7 @@ function initGuideWidget(el, config) {
           </div>
           ${excerpt ? `<p class="tagfyi-guide-excerpt">${escapeHTML8(excerpt)}</p>` : ""}
           <div class="tagfyi-guide-footer">
-            <a href="${guideUrl}" target="_blank" rel="noopener" class="tagfyi-guide-cta">
+            <a href="${guideUrl}" target="_blank" rel="nofollow noopener" class="tagfyi-guide-cta">
               Read on ${escapeHTML8(config.name)}
               ${externalLinkIcon}
             </a>
@@ -1660,7 +1660,7 @@ function initSearchWidget(el, config) {
           class="tagfyi-search-result-item"
           href="${href}"
           target="_blank"
-          rel="noopener"
+          rel="nofollow noopener"
           role="option"
           tabindex="-1"
         >
@@ -2287,7 +2287,7 @@ function initNdefInspectorTool(el, config) {
   });
   const actionsDiv = document.createElement("div");
   actionsDiv.className = "tagfyi-actions";
-  actionsDiv.innerHTML = `<a class="tagfyi-link" href="https://${escapeHTML11(config.domain)}/guides/" target="_blank" rel="noopener">NDEF format guides on ${escapeHTML11(config.name)} ${externalLinkIcon}</a>`;
+  actionsDiv.innerHTML = `<a class="tagfyi-link" href="https://${escapeHTML11(config.domain)}/guides/" target="_blank" rel="nofollow noopener">NDEF format guides on ${escapeHTML11(config.name)} ${externalLinkIcon}</a>`;
   const powered = container.querySelector(".tagfyi-powered");
   if (powered) container.insertBefore(actionsDiv, powered);
   else container.appendChild(actionsDiv);
